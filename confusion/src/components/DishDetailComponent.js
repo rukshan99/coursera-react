@@ -1,4 +1,5 @@
-import { Card, CardImg, CardTitle, CardBody, CardText } from 'reactstrap';
+import React from 'react';
+import { Card, CardImg, CardTitle, CardBody, CardText, ListGroup } from 'reactstrap';
 
 const DishDetailComponent = (props) => {
     return (

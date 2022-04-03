@@ -18,9 +18,33 @@ class Menu extends Component {
 
     renderDish(dish) {
         if (dish != null)
-            return(
-                <DishDetailComponent dish={dish}/>
+            return (
+                <DishDetailComponent dish={dish} />
             );
+        else
+            return (
+                <div></div>
+            );
+    }
+
+    renderComments = (dish) => {
+        if (dish != null) {
+            const comments = dish.comments;
+            const commentList = comments.map((comment, i) => {
+                return (
+                    <li key={i}>
+                        {comment.comment} <br />
+                        --{comment.author}, {comment.date}
+                    </li>
+                );
+            });
+            return (
+                <React.Fragment>
+                    <h4>Comments</h4>
+                    <ul className="list-unstyled">{commentList}</ul>
+                </React.Fragment>
+            );
+        }
         else
             return (
                 <div></div>
@@ -50,6 +74,9 @@ class Menu extends Component {
                 <div className="row">
                     <div className="col-12 col-md-5 m-1">
                         {this.renderDish(this.state.selectedDish)}
+                    </div>
+                    <div className="col-12 col-md-5 m-1">
+                        {this.renderComments(this.state.selectedDish)}
                     </div>
                 </div>
             </div>
