@@ -13,8 +13,7 @@ const renderDish = (dish) => {
     );
 }
 
-const renderComments = (dish) => {
-    const comments = dish.comments;
+const renderComments = (comments) => {
     const commentList = comments.map((comment, i) => {
         return (
             <li key={i}>
@@ -40,7 +39,7 @@ const DishDetailComponent = (props) => {
                     {renderDish(props.dish)}
                 </div>
                 <div className="col-12 col-md-5 m-1">
-                    {renderComments(props.dish)}
+                    {renderComments(props.comments)}
                 </div>
             </div>
         </div>
