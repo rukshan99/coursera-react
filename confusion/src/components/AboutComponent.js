@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 
 function RenderLeader(props) {
     const leader = props.leader;
+    const imgStyle = {
+        maxHeight: 128,
+        maxWidth: 128
+      }
     return (
         <div key={leader.id} className="col-12 mt-5">
             <Media tag="li">
                 <Media left middle>
-                    <Media object src={leader.image} alt={leader.name} />
+                    <Media object src={leader.image} style={imgStyle} alt={leader.name} />
                 </Media>
                 <Media body className="ml-5">
                     <Media heading>{leader.name}</Media>
@@ -24,7 +28,7 @@ function About(props) {
 
     const leaders = props.leaders.map((leader) => {
         return (
-            <p>Leader {leader.name}</p>
+            <RenderLeader leader={leader} />
         );
     });
 
