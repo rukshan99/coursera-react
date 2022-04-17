@@ -1,4 +1,3 @@
-import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
 
 export const initialState = {
