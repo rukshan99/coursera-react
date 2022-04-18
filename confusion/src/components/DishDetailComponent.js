@@ -131,7 +131,7 @@ class DishDetail extends Component {
     }
 
     render() {
-        if (props.isLoading) {
+        if (this.props.isLoading) {
             return (
                 <div className="container">
                     <div className="row">
@@ -140,16 +140,16 @@ class DishDetail extends Component {
                 </div>
             );
         }
-        else if (props.errMess) {
+        else if (this.props.errMess) {
             return (
                 <div className="container">
                     <div className="row">
-                        <h4>{props.errMess}</h4>
+                        <h4>{this.props.errMess}</h4>
                     </div>
                 </div>
             );
         }
-        else if (props.dish != null) {
+        else if (this.props.dish != null) {
             return (
                 <div className="container">
                     <div className="row">
