@@ -21,7 +21,7 @@ class CommentForm extends Component {
 
     handleSubmit(values) {
         console.log('Current State is: ' + JSON.stringify(values));
-        this.props.addComment(this.props.dishId, values.rating, values.name, values.comment);
+        this.props.postComment(this.props.dishId, values.rating, values.name, values.comment);
     }
 
     render() {
@@ -175,7 +175,7 @@ class DishDetail extends Component {
                     <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                         <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
                         <ModalBody>
-                            <CommentForm dishId={this.props.dish.id} addComment={this.props.addComment} />
+                            <CommentForm dishId={this.props.dish.id} postComment={this.props.postComment} />
                         </ModalBody>
                     </Modal>
                 </div>
