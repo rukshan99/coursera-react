@@ -1,6 +1,7 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { Fade, Stagger } from 'react-animation-components';
 
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
@@ -44,11 +45,15 @@ function RenderLeader(props) {
 
 function About(props) {
 
-    const leaders = props.leaders.map((leader) => {
-        return (
-            <RenderLeader leader={leader} isLoading={props.isLoading} errMess={props.errMess}/>
-        );
-    });
+    const leaders = <Stagger in>
+        {props.leaders.map((leader) => {
+            return (
+                <Fade in>
+                    <RenderLeader leader={leader} isLoading={props.isLoading} errMess={props.errMess} />
+                </Fade>
+            );
+        })}
+    </Stagger>;
 
     return (
         <div className="container">
