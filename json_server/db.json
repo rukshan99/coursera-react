@@ -271,6 +271,39 @@
       "message": "afadsfds",
       "date": "2017-12-04T09:41:49.890Z",
       "id": 1
+    },
+    {
+      "firstname": "Rukshan",
+      "lastname": "Jayasekara",
+      "telnum": "0763754996",
+      "email": "rukshanjayasekara@outlook.com",
+      "agree": false,
+      "contactType": "Tel.",
+      "message": "Good service!",
+      "date": "2022-04-22T16:55:33.795Z",
+      "id": 2
+    },
+    {
+      "firstname": "Rajapaksha",
+      "lastname": "Thilina",
+      "telnum": "32434234",
+      "email": "rukshan033@gmail.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Bad...",
+      "date": "2022-04-22T16:59:24.225Z",
+      "id": 3
+    },
+    {
+      "firstname": "Leo",
+      "lastname": "Messi",
+      "telnum": "31221",
+      "email": "messi@fcb.com",
+      "agree": true,
+      "contactType": "Email",
+      "message": "Best",
+      "date": "2022-04-22T17:00:34.947Z",
+      "id": 4
     }
   ]
 }

@@ -12,7 +12,7 @@ import Contact from './ContactComponent';
 import DishDetail from './DishDetailComponent';
 import About from './AboutComponent';
 
-import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/actionCreators';
+import { postComment, fetchDishes, fetchComments, fetchPromos, fetchLeaders, postFeedback } from '../redux/actionCreators';
 
 const mapStateToProps = (state) => {
   return {
@@ -29,6 +29,7 @@ const mapDispatchToProps = dispatch => ({
   postComment: (dishId, rating, author, comment) => dispatch(postComment(dishId, rating, author, comment)),
   fetchPromos: () => dispatch(fetchPromos()),
   fetchLeaders: () => dispatch(fetchLeaders()),
+  postFeedback: (firstname, lastname, telnum, email, agree, contactType, message) => dispatch(postFeedback(firstname, lastname, telnum, email, agree, contactType, message)),
   resetFeedbackForm: () => { dispatch(actions.reset('feedback')) }
 });
 
@@ -79,6 +80,14 @@ class Main extends Component {
         />
       );
     }
+    const ContactPage = () => {
+      return (
+        <Contact
+          resetFeedbackForm={this.props.resetFeedbackForm}
+          postFeedback={this.props.postFeedback}
+        />
+      );
+    }
     return (
       <div>
         <Header />
@@ -88,7 +97,7 @@ class Main extends Component {
               <Route path='/home' component={HomePage} />
               <Route exact path='/menu' component={() => <Menu dishes={this.props.dishes} />} />
               <Route path='/menu/:dishId' component={DishWithId} />
-              <Route path='/contactus' component={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} />} />
+              <Route path='/contactus' component={ContactPage} />
               <Route path='/aboutus' component={AboutPage} />
               <Redirect to="/home" />
             </Switch>
